@@ -4,7 +4,6 @@ Lista::Lista(){
   act = NULL;
 }
 
-//Aun no ha sido redefinida
 void Lista::insListaOrdenada(Elemento elem){
   Nodo* tmp = act;
   Nodo* nuevo = new Nodo;
@@ -24,7 +23,6 @@ void Lista::insListaOrdenada(Elemento elem){
     tmp->sig = nuevo;
   }
 }
-//Aun no ha sido redefinida
 
 void Lista::elimLista(int pos){
   Nodo *tmp, *elim;
