@@ -7,7 +7,7 @@ Ejemplo de uso TAD lista implementación estructuras enlazadas simples.
 #include "lista.h"
 #include <iostream>
 
-void concatenarListas(Lista l1, Lista l2);
+void concatenarListas(Lista l1, Lista l2); // O(n^2)
 
 int main(){
   Lista l;
@@ -53,10 +53,10 @@ int main(){
 }
 
 void concatenarListas(Lista l1, Lista l2){
-    int i; 
-    int tam = l2.longLista();
-    for(i = 1 ; i <= tam ; ++i){
-      Elemento val = l2.infoLista(i);
-      l1.anxLista(val);
+    int i;                              // 1
+    int tam = l2.longLista();           // n
+    for(i = 1 ; i <= tam ; ++i){        // n
+      Elemento val = l2.infoLista(i);   // n(n) en la ultima iteracion infolista debe ir hasta el ultimo elemento de la lista
+      l1.anxLista(val);                 // n(n) anxLista siempre tiene que ir hasta la ultima posicion
     }
 }
