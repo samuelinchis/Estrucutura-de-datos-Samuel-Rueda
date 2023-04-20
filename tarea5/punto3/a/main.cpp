@@ -7,7 +7,7 @@ Ejemplo de uso TAD lista implementación estructuras enlazadas simples.
 #include "lista.h"
 #include <iostream>
 
-Lista insertarEnListaOrdenada(Lista l, Elemento v);
+Lista insertarEnListaOrdenada(Lista l, Elemento v); // O(n^2)
 
 int main(){
   Lista l;
@@ -45,9 +45,9 @@ int main(){
 }
 
 Lista insertarEnListaOrdenada (Lista l, Elemento v){
-  int i = 1;
-  while(v > l.infoLista(i))
-    i++;
-  l.insLista(v,i);
-  return l;
+  int i = 1;                 // 1
+  while(v > l.infoLista(i))  // n(n)
+    i++;                     // n(n)-1
+  l.insLista(v,i);           // n
+  return l;                  // 1
 }
