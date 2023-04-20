@@ -7,8 +7,8 @@ Ejemplo de uso TAD lista implementación estructuras enlazadas simples.
 #include "lista.h"
 #include <iostream>
 
-int contarOcurrencias(Lista l, Elemento val);
-Lista obtenerMenores(Lista l, Elemento val);
+int contarOcurrencias(Lista l, Elemento val); // O(n^3)
+Lista obtenerMenores(Lista l, Elemento val);  // O(n^4)
 
 int main(){
   Lista l;
@@ -55,19 +55,19 @@ int main(){
 }
 
 int contarOcurrencias(Lista l, Elemento val){
-  int contador = 0;
-  for(int i = 1 ; i <= l.longLista() ; i++){
-    if(l.infoLista(i) == val)
-      contador ++;
+  int contador = 0;                             // 1
+  for(int i = 1 ; i <= l.longLista() ; i++){    // n(n)
+    if(l.infoLista(i) == val)                   // n^2(n)
+      contador ++;                              // n^2(n) 
   }
-  return contador;
+  return contador;                              // 1
 }
-Lista obtenerMenores(Lista l, Elemento val){
-  Lista s; 
-  for(int i = 1 ; i <= l.longLista(); i++)
-    if(l.infoLista(i) < val){
-      int menor = l.infoLista(i);
-      s.anxLista(menor);
+Lista obtenerMenores(Lista l, Elemento val){    
+  Lista s;                                    // 1
+  for(int i = 1 ; i <= l.longLista(); i++)    // n(n)
+    if(l.infoLista(i) < val){                 // n^2(n)
+      int menor = l.infoLista(i);             // n^3(n)
+      s.anxLista(menor);                      // n^4
     }
   return s;
 }
